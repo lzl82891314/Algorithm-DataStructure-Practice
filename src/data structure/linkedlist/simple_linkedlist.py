@@ -1,6 +1,6 @@
 # 自定义一个简单链表链表结构
 
-class LinkedList():
+class LinkedList(object):
     def __init__(self, value: object, next = None):
         self.value = value
         self.next = next
@@ -60,6 +60,15 @@ class LinkedList():
             current.next, pre, current = pre, current, current.next
         return pre
 
+    def find_middle_node(self):
+        # 寻找中间节点
+        # 解法：和求解环相同，使用快慢指针，步长一个是1一个是2，当fast指针运行到终点时，慢指针即为中间节点
+        slow, fast = self, self
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+        return slow
+
+
     def print(self):
         current, printStr = self.next, '%s'%(str(self.value))
         while current:
@@ -96,6 +105,8 @@ if __name__ == "__main__":
     print('找到尾：')
     node1.find_tail().print()
 
+    print('获取中间节点：')
+    node1.find_middle_node().print()
+
     print('反转后：')
     node1.reverse().print()
-    
