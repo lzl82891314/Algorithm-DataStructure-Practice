@@ -8,10 +8,10 @@ class MyArray():
         # 数组没有动态分配空间的概念，这个概念是List的，因此此字段只做展示使用
         self._capacity = capacity
 
-    def __get__(self, index: int) -> object:
+    def __getitem__(self, index: int) -> object:
         return self._data[index]
 
-    def __set__(self, index: int, value: object):
+    def __setitem__(self, index: int, value: object):
         self._data[index] = value
 
     def __len__(self) -> int:
