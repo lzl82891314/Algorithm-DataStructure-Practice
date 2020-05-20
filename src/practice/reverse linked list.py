@@ -13,7 +13,7 @@ def reverseLinkedlist(head: ListNode) -> ListNode:
     # 方法：使用前继指针和当前指针共同判定
     pre, current = None, head
     while current:
-        # python 独有写法，python中下段赋值操作会全部同时执行，省去了中间变量
+        # python 独有写法，python中下段赋值操作会全部同时执行，省去了中间变量， 但是执行顺序存在先后，切记
         current.next, pre, current = pre, current, current.next
         
         # 写法二，通用写法，创建变量赋值
