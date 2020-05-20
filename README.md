@@ -1,8 +1,8 @@
-# Algorithm-DataStructure-Practice
+# Algorithm & DataStructure Training Notes
 
 > 日拱一卒
 
-从头开始重新学习数据结构和算法，希望成为自己大厂梦的敲门砖。
+此仓库是我从头开始重新学习数据结构和算法的学习笔记，希望成为自己大厂梦的敲门砖。
 
 主要通过两门课程学习：
 
