@@ -1,5 +1,5 @@
 # Array类型数据结构的自定义实现
-# 主要包括动态扩容，增删改查等操作
+# 主要包括增删改查等操作
 
 class MyArray():
     def __init__(self, capacity: int = 10):
