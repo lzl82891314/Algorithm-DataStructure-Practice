@@ -51,6 +51,20 @@ class LinkedList(object):
             return False
         current.next = current.next.next
         return True
+    
+    def delete_by_value(self, value: object) -> bool:
+        if not value:
+            return False
+        if self.value == value:
+            self.next, self = None, self.next
+            return True
+        current = self
+        while current.next and current.next.value != value:
+            current = current.next
+        if not current.next:
+            return False
+        current.next = current.next.next
+        return True
 
     def reverse(self):
         if self.next is None:
@@ -107,6 +121,12 @@ if __name__ == "__main__":
 
     print('获取中间节点：')
     node1.find_middle_node().print()
+    
+    print('通过value删除：')
+    node1.print()
+    node1.delete_by_value(1)
+    node1.print()
+    node1.delete_by_value(1)
 
     print('反转后：')
     node1.reverse().print()
