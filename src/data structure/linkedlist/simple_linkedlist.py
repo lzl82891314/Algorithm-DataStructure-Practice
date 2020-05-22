@@ -120,6 +120,29 @@ class LinkedList(object):
             slow, fast = slow.next, fast.next.next
         return slow
 
+    def move_to_tail(self, value: object) -> bool:
+        if self._head is None:
+            return False
+        if self._head.next is None:
+            return self._head.value == value
+        if self._tail.value == value:
+            return True
+
+        node = Node(value)
+        if self._head.value == value:
+            self._head = self._head.next
+            self.insert(node)
+            return True
+        pre = self._head
+        while pre.next and pre.next.value != value:
+            pre = pre.next
+        if pre.next is None:
+            # 异常返回结果
+            return False
+        pre.next = pre.next.next
+        self.insert(node)
+        return True
+
 
     def print(self):
         current, printStr = self._head.next, '%s'%(str(self._head.value))
